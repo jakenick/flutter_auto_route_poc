@@ -1,16 +1,38 @@
-# flutter_auto_route
+# flutter_auto_route_poc
 
-A new Flutter project.
+This is a small proof of concept using a flutter plugin for their navigator 2.0 auto_route
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+There should be no additional needs to run this example app. Simple run pub get if needed and run the application.
 
-A few resources to get you started if this is your first Flutter project:
+[Flutter Auto Route](https://pub.dev/packages/auto_route)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+[Flutter Navigator 2.0](https://docs.flutter.dev/ui/navigation)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is mainly to take advantage of the MaterialApp.router() constructor and not needing to build out our own plugin 
+for deep links
+
+
+Bottom Navigation - 
+- You'll notice the bottom navigation should highlight and change the screen to the corresponding page either 
+  Dashboard, Users, or Settings
+- You can also select Users and Settings Screen from the dashboard buttons and the state of the bottom navigation is 
+  updated
+
+404/Whoops Screen - All of these are currently navigating you back to dashboard other return options are available
+- In a few places I've implemented a 404 page listed below
+- Dashboard -> Something Screen should 404 and return you to the dashboard
+- Users > User Details -> User Settings -> More User Settings should 404 and return you to dashboard
+- Settings -> Button -> More User Settings should 404 and return you to dashboard
+
+Users -
+- Users navigates you to a list of 4 mocked user tiles
+- Each user tile will pass a MockUser to the user details page through the navigator
+- User Settings will accept a user Id parameter to navigate further.
+- And finally more user settings will 404 as stated above
+
+Settings - 
+- Settings navigates you to a simple button
+- Button passes a hard coded user Id to take you to the user settings screen for user `11`
+- More user settings will 404 as stated above
