@@ -74,6 +74,6 @@ class RouteNames {
   static const String userDetail = '/:user';
 }
 
-// TODO: Do Research on how deep linking would actually work
+// TODO: Do Research on how deep linking would actually work for how I want to organize this.
 // https://docs.flutter.dev/ui/navigation/url-strategies#configuring-your-web-server - Configuration
 // https://docs.flutter.dev/ui/navigation/deep-linking - Setup
